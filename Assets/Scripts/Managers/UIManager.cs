@@ -58,20 +58,18 @@ namespace Managers
         public void Level1()
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-           // CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(0);
-           // CoreUISignals.Instance.onCloseAllPanels?.Invoke();
-           CoreUISignals.Instance.onClosePanel?.Invoke(2);
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+           OnLevelInitialize(1);
             
         }
         public void Level2()
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-           // CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(1);
-           // CoreUISignals.Instance.onCloseAllPanels?.Invoke();
-           CoreUISignals.Instance.onClosePanel?.Invoke(2);
-            
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+           //UISignals.Instance.onSetStageColor?.Invoke(3);  burada eğer panelden geçmeyi başarırsa trigger enter yerine stageID yaz playerphysics controllerda örneği var
+           OnLevelInitialize(2);
         }
 
         public void Play()
@@ -108,5 +106,6 @@ namespace Managers
             CoreUISignals.Instance.onCloseAllPanels?.Invoke();
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
         }
+        
     }
 }

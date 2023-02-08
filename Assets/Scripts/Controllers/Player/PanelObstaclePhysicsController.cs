@@ -40,8 +40,14 @@ namespace Controllers.Player
             {
                CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
                 //CoreGameSignals.Instance.OnMenuClicked?.Invoke();
-                manager.StageID++;
+                
                 Debug.Log("win");
+            }
+            if (other.CompareTag("PanelLevelPass"))
+            {
+                UISignals.Instance.onSetStageColor?.Invoke(manager.StageID);
+                manager.StageID++;
+                Debug.Log("pass");
             }
             
         }
