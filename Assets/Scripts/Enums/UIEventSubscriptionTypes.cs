@@ -4,6 +4,7 @@
     {
         OnPlay,
         OnNextLevel,
-        OnRestartLevel
+        OnRestartLevel,
+        OnLevelsPanel
     }
 }

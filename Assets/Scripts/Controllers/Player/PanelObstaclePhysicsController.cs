@@ -38,7 +38,8 @@ namespace Controllers.Player
 
             if (other.CompareTag("PanelLevelWin"))
             {
-                CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
+               CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
+                //CoreGameSignals.Instance.OnMenuClicked?.Invoke();
                 manager.StageID++;
                 Debug.Log("win");
             }

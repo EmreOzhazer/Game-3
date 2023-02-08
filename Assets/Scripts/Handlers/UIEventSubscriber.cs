@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Enums;
 using Managers;
 using Sirenix.OdinInspector;
@@ -13,6 +14,7 @@ namespace Handlers
         #region Serialized Variables
 
         [SerializeField] private UIEventSubscriptionTypes type;
+        //[SerializeField] private UILevelTypes levelType;
         [SerializeField] private Button button;
 
         #endregion
@@ -59,7 +61,22 @@ namespace Handlers
                     button.onClick.AddListener(_manager.RestartLevel);
                     break;
                 }
+                case UIEventSubscriptionTypes.OnLevelsPanel:
+                {
+                    button.onClick.AddListener(_manager.LevelsShow);
+                    break;
+                }
             }
+            
+            
+            // switch(levelType)
+            // {
+            //     case UILevelTypes.Level1:
+            //     {
+            //         button.onClick.AddListener(_manager.Level1);
+            //         break;
+            //     }
+            // }
         }
 
         private void UnSubscribeEvents()
@@ -81,7 +98,20 @@ namespace Handlers
                     button.onClick.RemoveListener(_manager.RestartLevel);
                     break;
                 }
+                case UIEventSubscriptionTypes.OnLevelsPanel:
+                {
+                    button.onClick.RemoveListener(_manager.LevelsShow);
+                    break;
+                }
             }
+            // switch(levelType)
+            // {
+            //     case UILevelTypes.Level1:
+            //     {
+            //         button.onClick.RemoveListener(_manager.Level1);
+            //         break;
+            //     }
+            // }
         }
 
         private void OnDisable()
