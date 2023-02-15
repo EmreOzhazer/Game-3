@@ -7,6 +7,12 @@ namespace Managers
 {
     public class UIManager : MonoBehaviour
     {
+        #region Serialized Variables
+
+        [SerializeField] private LevelManager levelManager;
+        
+
+        #endregion
         private void OnEnable()
         {
             SubscribeEvents();
@@ -60,16 +66,20 @@ namespace Managers
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(0);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
-           OnLevelInitialize(1);
+            
+            levelManager.levelID = 0;
             
         }
         public void Level2()
-        {
+        {           
+
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
-           //UISignals.Instance.onSetStageColor?.Invoke(3);  burada eğer panelden geçmeyi başarırsa trigger enter yerine stageID yaz playerphysics controllerda örneği var
-           OnLevelInitialize(2);
+            UISignals.Instance.onSetNewLevelValue?.Invoke(2);
+           
+            levelManager.levelID = 1;
+
         }
 
         public void Play()
@@ -77,13 +87,17 @@ namespace Managers
             CoreGameSignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CameraSignals.Instance.onSetCameraTarget?.Invoke();
-        }
 
+        }
+        //next levele bastıktan sonra level biri ibtirip yeniden geçersn level sayısı artmaya devam ediyor
+        // next levelde uı daki sayılar değişmiyor sadece level panlini açınca çalışıyor 
+        //yukardaki paneli tümden kaldırılabilinir.
         private void OnLevelInitialize(int levelValue)
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Level,0);
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
-            UISignals.Instance.onSetNewLevelValue?.Invoke(levelValue);
+            UISignals.Instance.onSetNewLevelValue?.Invoke(levelManager.levelID);
+            
         }
         
         private void OnLevelsPanel()

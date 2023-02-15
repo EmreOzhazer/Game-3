@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace Handlers
 {
     public class UILevelSubscriber: MonoBehaviour
@@ -16,7 +17,7 @@ namespace Handlers
        
         [SerializeField] private UILevelTypes levelType;
         [SerializeField] private Button button;
-
+        
         #endregion
 
         #region Private Variables
@@ -42,6 +43,7 @@ namespace Handlers
             SubscribeEvents();
         }
 
+        
         private void SubscribeEvents()
         {
             switch(levelType)

@@ -16,10 +16,10 @@ namespace Controllers.Player
         #region Serialized Variables
 
         [SerializeField] private PanelObstacleManager manager;
-
+        
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private new Collider collider;
-
+        
         #endregion
 
         #region Private Variables
@@ -63,23 +63,27 @@ namespace Controllers.Player
                 animation.DOPlayById("first");
                 animation.DOPlayById("second");
                 animation.DOPlayById("third");
+               
             }
             
-           //rigidbody.AddForce(-transform.forward*_data.ForwardSpeed);
+           
         }
 
         private void StopPlayerHorizontaly()
         {
+            
            // rigidbody.velocity = new float3(0, rigidbody.velocity.y, _data.ForwardSpeed);
             rigidbody.angularVelocity = float3.zero;
         }
         
         
         
-        private void StopPlayer()
+        public void StopPlayer()
         {
-            rigidbody.velocity = float3.zero;
-            rigidbody.angularVelocity = float3.zero;
+            
+            
+             // rigidbody.velocity = float3.zero; //
+              //rigidbody.angularVelocity = float3.zero;
         }
 
         internal void IsReadyToPlay(bool condition)

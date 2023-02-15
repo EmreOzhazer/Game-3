@@ -11,9 +11,9 @@ namespace Managers
         #region Self Variables
 
         #region Serialized Variables
-
+        [SerializeField] private UIManager _uiManager;
         [SerializeField] private Transform levelHolder;
-        [SerializeField] private int levelID;
+        [SerializeField] public int levelID;
 
         #endregion
 
@@ -88,10 +88,14 @@ namespace Managers
 
         private void OnNextLevel()
         {
+           // _uiManager.levelValue++;
             levelID++;
+            //levelID = _uiManager.;
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-            CoreGameSignals.Instance.onReset?.Invoke();
+            //CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
+          
+            
         }
 
         private void OnRestartLevel()

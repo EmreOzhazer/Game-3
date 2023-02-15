@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using Managers;
 using Signals;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Controllers.UI
         #region Self Variables
 
         #region Serialized Variables
-
+        
         [SerializeField] private List<TextMeshProUGUI> levelTexts = new List<TextMeshProUGUI>();
         [Space] [SerializeField] private List<Image> stageImages = new List<Image>();
 
@@ -46,10 +47,12 @@ namespace Controllers.UI
         private void OnSetNewLevelValue(int levelValue)
         {
             if (levelValue <= 0) levelValue = 1;
-
+           
             levelTexts[0].text = levelValue.ToString();
+           
             var value = ++levelValue;
             levelTexts[1].text = value.ToString();
+           
         }
 
         [Button("OnSetStageColor")]
