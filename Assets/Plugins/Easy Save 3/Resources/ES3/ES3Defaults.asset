@@ -44,6 +44,8 @@ MonoBehaviour:
     - NonConvexCollider
     - NonConvexColliderRuntimeAPI
     - Sirenix.OdinInspector.CompatibilityLayer
+    - LeanCommonPlus
+    - LeanTouchPlus
     - Boxophobic.Utils.Editor
     - PPv2URPConverters
     - NonConvexEditor

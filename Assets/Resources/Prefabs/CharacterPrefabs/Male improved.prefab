@@ -24995,7 +24995,6 @@ GameObject:
   - component: {fileID: 32317627588017885}
   - component: {fileID: 4785427473319731493}
   - component: {fileID: 406725176049062523}
-  - component: {fileID: 6458663734867318794}
   - component: {fileID: 9005000912118394640}
   - component: {fileID: 1665304168682014798}
   m_Layer: 0
@@ -25106,20 +25105,6 @@ MonoBehaviour:
   damping: -1
   inertia: 0
   remainingTranslation: {x: 0, y: 0, z: 0}
---- !u!114 &6458663734867318794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4422169931348496696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baa936f016a9a14e86ac8ea42211f4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &9005000912118394640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37490,10 +37475,8 @@ GameObject:
   - component: {fileID: 2530475557476205888}
   - component: {fileID: 889921508783357780}
   - component: {fileID: 3775210155545148555}
-  - component: {fileID: 7413948591809076289}
   - component: {fileID: 7353947540693304861}
   - component: {fileID: 7471752488486361402}
-  - component: {fileID: 6150372477855545835}
   m_Layer: 0
   m_Name: righthand
   m_TagString: Untagged
@@ -37602,20 +37585,6 @@ MonoBehaviour:
   damping: -1
   inertia: 0
   remainingTranslation: {x: 0, y: 0, z: 0}
---- !u!114 &7413948591809076289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211995149987392173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2baa936f016a9a14e86ac8ea42211f4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &7353947540693304861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49205,21 +49174,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!114 &6150372477855545835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6211995149987392173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5577d3c0ee045fc8ae5cb37e1328098, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yCon: {x: -1, y: 1}
-  xCon: {x: -1, y: 1}
-  wantaBePos: {x: -2, y: 2}
 --- !u!1 &6561248576112460700
 GameObject:
   m_ObjectHideFlags: 0
