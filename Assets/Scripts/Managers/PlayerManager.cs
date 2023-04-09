@@ -23,7 +23,7 @@ namespace Managers
 
         [SerializeField] private PlayerMovementController movementController;
         [SerializeField] private PlayerPhysicsController physicsController;
-        [SerializeField] private PlayerMeshController meshController;
+       // [SerializeField] private PlayerMeshController meshController;
 
         #endregion
 
@@ -55,86 +55,86 @@ namespace Managers
         private void SendDataToControllers()
         {
             movementController.SetMovementData(_data.MovementData);
-            meshController.SetMeshData(_data.ScaleData);
+          //  meshController.SetMeshData(_data.ScaleData);
         }
 
-        private void OnEnable()
-        {
-            SubscribeEvents();
-        }
+        // private void OnEnable()
+        // {
+        //     SubscribeEvents();
+        // }
 
-        private void SubscribeEvents()
-        {
-            InputSignals.Instance.onInputTaken += OnInputTaken;
-            InputSignals.Instance.onInputReleased += OnInputReleased;
-            InputSignals.Instance.onInputDragged += movementController.UpdateInputParams;
-            CoreGameSignals.Instance.onPlay += OnPlay;
-            CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
-            CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
-            CoreGameSignals.Instance.onStageAreaEntered += OnStageAreaEntered;
-            CoreGameSignals.Instance.onStageAreaSuccessful += OnStageAreaSuccessful;
-            CoreGameSignals.Instance.onReset += OnReset;
-        }
-
-        private void UnSubscribeEvents()
-        {
-            InputSignals.Instance.onInputTaken -= OnInputTaken;
-            InputSignals.Instance.onInputReleased -= OnInputReleased;
-            InputSignals.Instance.onInputDragged -= movementController.UpdateInputParams;
-            CoreGameSignals.Instance.onPlay -= OnPlay;
-            CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
-            CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
-            CoreGameSignals.Instance.onStageAreaEntered -= OnStageAreaEntered;
-            CoreGameSignals.Instance.onStageAreaSuccessful -= OnStageAreaSuccessful;
-            CoreGameSignals.Instance.onReset -= OnReset;
-        }
-
-        private void OnDisable()
-        {
-            UnSubscribeEvents();
-        }
-
-        private void OnPlay()
-        {
-            movementController.IsReadyToPlay(true);
-        }
-
-        private void OnInputTaken()
-        {
-            movementController.IsReadyToMove(true);
-        }
-
-        private void OnInputReleased()
-        {
-            movementController.IsReadyToMove(false);
-        }
-
-        private void OnLevelSuccessful()
-        {
-            movementController.IsReadyToPlay(false);
-        }
-
-        private void OnLevelFailed()
-        {
-            movementController.IsReadyToPlay(false);
-        }
-
-        private void OnStageAreaEntered()
-        {
-            movementController.IsReadyToPlay(false);
-        }
-
-        private void OnStageAreaSuccessful(byte stageID)
-        {
-            movementController.IsReadyToPlay(true);
-        }
-
-        private void OnReset()
-        {
-            StageID = 0;
-            movementController.OnReset();
-            meshController.OnReset();
-            physicsController.OnReset();
-        }
+        // private void SubscribeEvents()
+        // {
+        //     InputSignals.Instance.onInputTaken += OnInputTaken;
+        //     InputSignals.Instance.onInputReleased += OnInputReleased;
+        //     InputSignals.Instance.onInputDragged += movementController.UpdateInputParams;
+        //     CoreGameSignals.Instance.onPlay += OnPlay;
+        //     CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
+        //     CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
+        //     CoreGameSignals.Instance.onStageAreaEntered += OnStageAreaEntered;
+        //     CoreGameSignals.Instance.onStageAreaSuccessful += OnStageAreaSuccessful;
+        //     CoreGameSignals.Instance.onReset += OnReset;
+        // }
+        //
+        // private void UnSubscribeEvents()
+        // {
+        //     InputSignals.Instance.onInputTaken -= OnInputTaken;
+        //     InputSignals.Instance.onInputReleased -= OnInputReleased;
+        //     InputSignals.Instance.onInputDragged -= movementController.UpdateInputParams;
+        //     CoreGameSignals.Instance.onPlay -= OnPlay;
+        //     CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
+        //     CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
+        //     CoreGameSignals.Instance.onStageAreaEntered -= OnStageAreaEntered;
+        //     CoreGameSignals.Instance.onStageAreaSuccessful -= OnStageAreaSuccessful;
+        //     CoreGameSignals.Instance.onReset -= OnReset;
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     UnSubscribeEvents();
+        // }
+        //
+        // private void OnPlay()
+        // {
+        //     movementController.IsReadyToPlay(true);
+        // }
+        //
+        // private void OnInputTaken()
+        // {
+        //     movementController.IsReadyToMove(true);
+        // }
+        //
+        // private void OnInputReleased()
+        // {
+        //     movementController.IsReadyToMove(false);
+        // }
+        //
+        // private void OnLevelSuccessful()
+        // {
+        //     movementController.IsReadyToPlay(false);
+        // }
+        //
+        // private void OnLevelFailed()
+        // {
+        //     movementController.IsReadyToPlay(false);
+        // }
+        //
+        // private void OnStageAreaEntered()
+        // {
+        //     movementController.IsReadyToPlay(false);
+        // }
+        //
+        // private void OnStageAreaSuccessful(byte stageID)
+        // {
+        //     movementController.IsReadyToPlay(true);
+        // }
+        //
+        // private void OnReset()
+        // {
+        //     StageID = 0;
+        //     movementController.OnReset();
+        //    // meshController.OnReset();
+        //     //physicsController.OnReset();
+        // }
     }
 }

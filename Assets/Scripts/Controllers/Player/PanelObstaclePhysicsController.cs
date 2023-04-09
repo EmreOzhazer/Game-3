@@ -13,10 +13,10 @@ namespace Controllers.Player
         #region Self Variables
 
         #region Serialized Variables
-        [SerializeField] private PanelObstacleMovementController movementController;
+       // [SerializeField] private PanelObstacleMovementController movementController;
         [SerializeField] private PanelObstacleManager manager;
-        [SerializeField] private new Collider collider;
-        [SerializeField] private new Rigidbody rigidbody;
+       // [SerializeField] private new Collider collider;
+       // [SerializeField] private new Rigidbody rigidbody;
         
 
 
@@ -36,7 +36,7 @@ namespace Controllers.Player
                 Debug.Log("lose");
                 DOTween.Pause("first");
                 CoreGameSignals.Instance.onLevelFailed?.Invoke();
-                movementController.StopPlayer();
+               
             }
 
             if (other.CompareTag("PanelLevelWin"))

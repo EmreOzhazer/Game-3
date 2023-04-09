@@ -43,7 +43,7 @@ namespace Controllers.Player
         {
             if (!_isReadyToPlay)
             {
-                StopPlayer();
+               // StopPlayer();
                 return;
             }
 
@@ -78,13 +78,7 @@ namespace Controllers.Player
         
         
         
-        public void StopPlayer()
-        {
-            
-            
-             // rigidbody.velocity = float3.zero; //
-              //rigidbody.angularVelocity = float3.zero;
-        }
+       
 
         internal void IsReadyToPlay(bool condition)
         {
@@ -105,7 +99,7 @@ namespace Controllers.Player
 
         internal void OnReset()
         {
-            StopPlayer();
+            
             _isReadyToPlay = false;
             _isReadyToMove = false;
         }
