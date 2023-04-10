@@ -32,8 +32,10 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Boxophobic.PolyverseSkies.Runtime
     - CW.Common
+    - LeanCommonPlus
     - Cinemachine
     - Assembly-CSharp
+    - LeanTouchPlus
     - sc.stylizedwater2.runtime
     - LeanTouch
     - Boxophobic.Utils.Scripts
@@ -44,8 +46,6 @@ MonoBehaviour:
     - NonConvexCollider
     - NonConvexColliderRuntimeAPI
     - Sirenix.OdinInspector.CompatibilityLayer
-    - LeanCommonPlus
-    - LeanTouchPlus
     - Boxophobic.Utils.Editor
     - PPv2URPConverters
     - NonConvexEditor
