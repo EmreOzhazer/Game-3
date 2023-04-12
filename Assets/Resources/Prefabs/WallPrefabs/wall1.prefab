@@ -74,9 +74,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144627717890882681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: 3.66, z: 94.56}
-  m_LocalScale: {x: 961.6756, y: 884.29944, z: 884.29944}
+  m_LocalScale: {x: 884.29944, y: 884.29944, z: 884.29944}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4831720635411898999}
@@ -220,7 +220,7 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 5
+  duration: 10
   easeType: 2
   easeCurve:
     serializedVersion: 2
