@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  levelType: 0
   button: {fileID: 5078070866484615785}
 --- !u!1 &6721442149659950471
 GameObject:
@@ -309,7 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  levelType: 0
   button: {fileID: 7325713410376967178}
 --- !u!1 &7325713410841882745
 GameObject:

@@ -70,6 +70,7 @@ namespace Managers
         private void Start()
         {
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);//levelsayılarını burdan al
+            //CoreGameSignals.Instance.onPlay?.Invoke();
         }
 
         private LevelData GetLevelData() => Resources.Load<CD_Level>("Data/CD_Level").LevelList[levelID];
@@ -95,8 +96,8 @@ namespace Managers
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             //CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
-          
             UISignals.Instance.onCountdownStart?.Invoke();
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
             //start coroutine ready go burada ver
             
         }
@@ -105,6 +106,7 @@ namespace Managers
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
+            UISignals.Instance.onCountdownStart?.Invoke();
         }
     }
 }

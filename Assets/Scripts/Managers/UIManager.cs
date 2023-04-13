@@ -58,15 +58,16 @@ namespace Managers
             CoreGameSignals.Instance.OnLevelsPanel?.Invoke();
            // CoreUISignals.Instance.onClosePanel?.Invoke(2);
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
-            //CoreGameSignals.Instance.onReset?.Invoke();
+           
         }
-        // eğer levele basarsa set go olacak 
+        
         public void Level1()
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(0);
+            CoreGameSignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
-            
+            UISignals.Instance.onCountdownStart?.Invoke();
             levelManager.levelID = 0;
             
         }
@@ -75,9 +76,10 @@ namespace Managers
 
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(1);
+            CoreGameSignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onSetNewLevelValue?.Invoke(2);
-           
+            UISignals.Instance.onCountdownStart?.Invoke();
             
             levelManager.levelID = 1;
 
@@ -96,8 +98,10 @@ namespace Managers
         private void OnLevelInitialize(int levelValue)
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Level,0);
-            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
+           // CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
             UISignals.Instance.onSetNewLevelValue?.Invoke(levelManager.levelID);
+            
+            
             
         }
         
