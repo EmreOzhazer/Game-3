@@ -2,6 +2,7 @@
 using Data.UnityObjects;
 using Data.ValueObjects;
 using Signals;
+using StylizedWater2;
 using UnityEngine;
 
 namespace Managers
@@ -95,6 +96,8 @@ namespace Managers
             //CoreGameSignals.Instance.onReset?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
           
+            UISignals.Instance.onCountdownStart?.Invoke();
+            //start coroutine ready go burada ver
             
         }
 

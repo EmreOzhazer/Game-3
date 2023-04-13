@@ -17,8 +17,8 @@ namespace Controllers.Player
         [SerializeField] private PanelObstacleManager manager;
        // [SerializeField] private new Collider collider;
        // [SerializeField] private new Rigidbody rigidbody;
-        
 
+       
 
         #endregion
 
@@ -36,7 +36,8 @@ namespace Controllers.Player
                 Debug.Log("lose");
                 DOTween.Pause("first");
                 CoreGameSignals.Instance.onLevelFailed?.Invoke();
-               
+                DOTween.Pause("third");
+
             }
 
             if (other.CompareTag("PanelLevelWin"))

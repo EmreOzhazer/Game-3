@@ -7,5 +7,6 @@ namespace Signals
     {
         public UnityAction<int> onSetNewLevelValue = delegate { };
         public UnityAction<int> onSetStageColor = delegate { };
+        public UnityAction onCountdownStart = delegate { };
     }
 }

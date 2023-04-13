@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using DG.Tweening;
 using Managers;
 using Signals;
@@ -17,7 +18,7 @@ namespace Controllers.UI
         
         [SerializeField] private List<TextMeshProUGUI> levelTexts = new List<TextMeshProUGUI>();
         [Space] [SerializeField] private List<Image> stageImages = new List<Image>();
-
+        [SerializeField] private List<GameObject> startingImages = new List<GameObject>();
         #endregion
 
         #endregion
@@ -31,19 +32,48 @@ namespace Controllers.UI
         {
             UISignals.Instance.onSetNewLevelValue += OnSetNewLevelValue;
             UISignals.Instance.onSetStageColor += OnSetStageColor;
+            UISignals.Instance.onCountdownStart += onCountdownStart;
         }
 
         private void UnSubscribeEvents()
         {
             UISignals.Instance.onSetNewLevelValue -= OnSetNewLevelValue;
             UISignals.Instance.onSetStageColor -= OnSetStageColor;
+            UISignals.Instance.onCountdownStart -= onCountdownStart;
         }
 
         private void OnDisable()
         {
             UnSubscribeEvents();
         }
+        
 
+        private void  onCountdownStart()
+        {
+            StartCoroutine(countdownImages());
+            IEnumerator  countdownImages()
+            {
+                // startingImages[imagevalue].DOPlay();
+                startingImages[0].SetActive(true);
+                
+                yield return new WaitForSeconds (1f);
+            
+                startingImages[0].SetActive(false);
+                startingImages[1].SetActive(true);
+                
+                yield return new WaitForSeconds (1f);
+                
+                startingImages[1].SetActive(false);
+            }
+            
+           
+        }
+       
+        
+       
+        
+        
+        
         private void OnSetNewLevelValue(int levelValue)
         {
             if (levelValue <= 0) levelValue = 1;

@@ -60,7 +60,7 @@ namespace Managers
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             //CoreGameSignals.Instance.onReset?.Invoke();
         }
-        
+        // eğer levele basarsa set go olacak 
         public void Level1()
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
@@ -78,6 +78,7 @@ namespace Managers
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onSetNewLevelValue?.Invoke(2);
            
+            
             levelManager.levelID = 1;
 
         }
