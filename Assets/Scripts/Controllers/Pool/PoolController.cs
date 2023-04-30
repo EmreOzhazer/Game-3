@@ -14,71 +14,71 @@ namespace Controllers.Pool
 {
     public class PoolController : MonoBehaviour
     {
-        #region Self Variables
-
-        #region Serialized Variables
-
-        [SerializeField] private byte stageID;
-       // [SerializeField] private TextMeshPro poolText;
-        [SerializeField] private List<DOTweenAnimation> tweenAnimations = new List<DOTweenAnimation>();
-
-        #endregion
-
-        #region Private Variables
-
-        [ShowInInspector] private PoolData _data;
-       // [ShowInInspector] private byte _requiredAmount, _collectedCount;
-
-        #endregion
-
-        #endregion
-
-        private void Awake()
-        {
-            _data = GetPoolData();
-           // SetRequiredAmount();
-        }
-
-        private PoolData GetPoolData()
-        {
-            return Resources.Load<CD_Level>("Data/CD_Level")
-                .LevelList[(int)CoreGameSignals.Instance.onGetLevelID?.Invoke()].PoolList[stageID];
-        }
-
-        private void OnEnable()
-        {
-            SubscribeEvents();
-        }
-
-        private void SubscribeEvents()
-        {
-            CoreGameSignals.Instance.onStageAreaSuccessful += OnActivateAllAnimations;
-        }
-
-        private void UnSubscribeEvents()
-        {
-            CoreGameSignals.Instance.onStageAreaSuccessful -= OnActivateAllAnimations;
-        }
-
-        private void OnDisable()
-        {
-            UnSubscribeEvents();
-        }
-
-        private void Start()
-        {
-           // SetRequiredAmountToText();
-        }
-
-        private void OnActivateAllAnimations(byte stageID)
-        {
-           // if (stageID != this.stageID) return;
-            foreach (var animation in tweenAnimations)
-            {
-                animation.DOPlay();
-                
-            }
-        }
+       //  #region Self Variables
+       //
+       //  #region Serialized Variables
+       //
+       //  [SerializeField] private byte stageID;
+       // // [SerializeField] private TextMeshPro poolText;
+       //  [SerializeField] private List<DOTweenAnimation> tweenAnimations = new List<DOTweenAnimation>();
+       //
+       //  #endregion
+       //
+       //  #region Private Variables
+       //
+       //  [ShowInInspector] private PoolData _data;
+       // // [ShowInInspector] private byte _requiredAmount, _collectedCount;
+       //
+       //  #endregion
+       //
+       //  #endregion
+       //
+       //  private void Awake()
+       //  {
+       //      _data = GetPoolData();
+       //     // SetRequiredAmount();
+       //  }
+       //
+       //  private PoolData GetPoolData()
+       //  {
+       //      return Resources.Load<CD_Level>("Data/CD_Level")
+       //          .LevelList[(int)CoreGameSignals.Instance.onGetLevelID?.Invoke()].PoolList[stageID];
+       //  }
+       //
+       //  private void OnEnable()
+       //  {
+       //      SubscribeEvents();
+       //  }
+       //
+       //  private void SubscribeEvents()
+       //  {
+       //      CoreGameSignals.Instance.onStageAreaSuccessful += OnActivateAllAnimations;
+       //  }
+       //
+       //  private void UnSubscribeEvents()
+       //  {
+       //      CoreGameSignals.Instance.onStageAreaSuccessful -= OnActivateAllAnimations;
+       //  }
+       //
+       //  private void OnDisable()
+       //  {
+       //      UnSubscribeEvents();
+       //  }
+       //
+       //  private void Start()
+       //  {
+       //     // SetRequiredAmountToText();
+       //  }
+       //
+       //  private void OnActivateAllAnimations(byte stageID)
+       //  {
+       //     // if (stageID != this.stageID) return;
+       //      foreach (var animation in tweenAnimations)
+       //      {
+       //          animation.DOPlay();
+       //          
+       //      }
+       //  }
 
         // private void SetRequiredAmount()
         // {
@@ -115,14 +115,14 @@ namespace Controllers.Pool
         //     SetCollectedAmountToText();
         // }
         //
-        public bool TakeStageResult(byte managerStageID)
-        {
-            if (stageID == managerStageID)
-            {
-              //  return _collectedCount >= _requiredAmount;
-            }
-        
-            return false;
-        }
-    }
+    //     public bool TakeStageResult(byte managerStageID)
+    //     {
+    //         if (stageID == managerStageID)
+    //         {
+    //           //  return _collectedCount >= _requiredAmount;
+    //         }
+    //     
+    //         return false;
+    //     }
+     }
 }
