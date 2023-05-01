@@ -43,23 +43,21 @@ namespace Managers
 
         public void NextLevel()
         {
-            levelManager.levelID++;
-            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-            CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelManager.levelID++);
+            CoreGameSignals.Instance.onNextLevel?.Invoke();
             
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
-            
-            
-            // CoreGameSignals.Instance.onNextLevel?.Invoke();
-            // CoreGameSignals.Instance.onReset?.Invoke();
         }
 
         public void RestartLevel()
         {
             CoreGameSignals.Instance.onRestartLevel?.Invoke();
-            CoreGameSignals.Instance.onReset?.Invoke();
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+            UISignals.Instance.onCountdownStart?.Invoke();
+          
         }
         
         public void LevelsShow()
@@ -129,12 +127,13 @@ namespace Managers
         private void OnLevelFailed()
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Fail, 2);
+            
         }
 
         private void OnReset()
         {
             CoreUISignals.Instance.onCloseAllPanels?.Invoke();
-            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
+            //CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
         }
         
     }

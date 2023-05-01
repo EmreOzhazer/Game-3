@@ -92,24 +92,14 @@ namespace Managers
         private void OnNextLevel()
         {
             levelID++;
-           
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-            
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
-            UISignals.Instance.onCountdownStart?.Invoke();
-            CoreUISignals.Instance.onClosePanel?.Invoke(2);
-            
-            
-            
         }
 
         private void OnRestartLevel()
         {
-            CoreUISignals.Instance.onClosePanel?.Invoke(1);
-            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
+            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();//removes the child from hierarchy
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
-           // UISignals.Instance.onCountdownStart?.Invoke();
-            
         }
     }
 }
