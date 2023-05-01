@@ -43,8 +43,17 @@ namespace Managers
 
         public void NextLevel()
         {
-            CoreGameSignals.Instance.onNextLevel?.Invoke();
-            CoreGameSignals.Instance.onReset?.Invoke();
+            levelManager.levelID++;
+            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelManager.levelID++);
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+            UISignals.Instance.onCountdownStart?.Invoke();
+            
+            
+            // CoreGameSignals.Instance.onNextLevel?.Invoke();
+            // CoreGameSignals.Instance.onReset?.Invoke();
         }
 
         public void RestartLevel()
@@ -65,7 +74,8 @@ namespace Managers
         {
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(0);
-            CoreGameSignals.Instance.onPlay?.Invoke();
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
             levelManager.levelID = 0;
@@ -76,7 +86,8 @@ namespace Managers
 
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(1);
-            CoreGameSignals.Instance.onPlay?.Invoke();
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onSetNewLevelValue?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
@@ -98,7 +109,7 @@ namespace Managers
         private void OnLevelInitialize(int levelValue)
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Level,0);
-           // CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
             UISignals.Instance.onSetNewLevelValue?.Invoke(levelManager.levelID);
             
             

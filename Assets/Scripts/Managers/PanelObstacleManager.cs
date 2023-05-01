@@ -1,4 +1,4 @@
-﻿using Command.Player;
+﻿//using Command.Player;
 using Controllers.Player;
 using Data.UnityObjects;
 using Data.ValueObjects;
@@ -15,7 +15,7 @@ namespace Managers
         #region Public Variables
 
         internal byte StageID;
-        internal ForceBallsToPoolCommand ForceCommand;
+        //internal ForceBallsToPoolCommand ForceCommand;
 
         #endregion
 

@@ -64,6 +64,7 @@ namespace Controllers.UI
                 yield return new WaitForSeconds (1f);
                 
                 startingImages[1].SetActive(false);
+                CoreGameSignals.Instance.onPlay?.Invoke();
             }
             
            
