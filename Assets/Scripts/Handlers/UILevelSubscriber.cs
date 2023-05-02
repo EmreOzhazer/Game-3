@@ -58,6 +58,16 @@ namespace Handlers
                     button.onClick.AddListener(_manager.Level2);
                     break;
                 }
+                case UILevelTypes.Level3:
+                {
+                    button.onClick.AddListener(_manager.Level3);
+                    break;
+                }
+                case UILevelTypes.Level4:
+                {
+                    button.onClick.AddListener(_manager.Level4);
+                    break;
+                }
             }
         }
 
@@ -73,6 +83,16 @@ namespace Handlers
                 case UILevelTypes.Level2:
                 {
                     button.onClick.RemoveListener(_manager.Level2);
+                    break;
+                }
+                case UILevelTypes.Level3:
+                {
+                    button.onClick.RemoveListener(_manager.Level3);
+                    break;
+                }
+                case UILevelTypes.Level4:
+                {
+                    button.onClick.RemoveListener(_manager.Level4);
                     break;
                 }
             }

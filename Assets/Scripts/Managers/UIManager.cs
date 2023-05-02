@@ -87,10 +87,35 @@ namespace Managers
             
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
-            UISignals.Instance.onSetNewLevelValue?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
             
             levelManager.levelID = 1;
+
+        }
+        public void Level3()
+        {           
+
+            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(2);
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+            UISignals.Instance.onCountdownStart?.Invoke();
+            
+            levelManager.levelID = 2;
+
+        }
+        public void Level4()
+        {           
+
+            CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(3);
+            
+            CoreUISignals.Instance.onClosePanel?.Invoke(1);
+            CoreUISignals.Instance.onClosePanel?.Invoke(2);
+            UISignals.Instance.onCountdownStart?.Invoke();
+            
+            levelManager.levelID = 3;
 
         }
 

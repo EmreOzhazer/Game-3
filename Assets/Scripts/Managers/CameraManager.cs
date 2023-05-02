@@ -37,7 +37,7 @@ namespace Managers
 
         private void OnSetCameraTarget()
         {
-            virtualCamera.Follow = FindObjectOfType<PlayerManager>().transform;
+            virtualCamera.Follow = FindObjectOfType<PanelObstacleManager>().transform;
         }
 
         private void UnSubscribeEvents()
