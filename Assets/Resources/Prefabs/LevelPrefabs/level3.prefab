@@ -1837,6 +1837,11 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 1217330538948286846, guid: 61e886f8fae01e249bfa6ec5f1b3b427,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 4746040196238351631}
     - target: {fileID: 1920193745259567818, guid: 61e886f8fae01e249bfa6ec5f1b3b427,
         type: 3}
       propertyPath: manager
@@ -1912,6 +1917,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6030132820952508899}
     m_Modifications:
+    - target: {fileID: 409422388912268766, guid: 0d14560ce86f44e428f17a87fae1112b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4644847071580036987, guid: 0d14560ce86f44e428f17a87fae1112b,
         type: 3}
       propertyPath: m_Name
@@ -1930,12 +1940,12 @@ PrefabInstance:
     - target: {fileID: 5421805506148353473, guid: 0d14560ce86f44e428f17a87fae1112b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 5421805506148353473, guid: 0d14560ce86f44e428f17a87fae1112b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.509998
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 5421805506148353473, guid: 0d14560ce86f44e428f17a87fae1112b,
         type: 3}
@@ -1982,8 +1992,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a42a82395d9028542a22a6c017505cb6, type: 2}
-    m_RemovedComponents:
-    - {fileID: 7748808385823008930, guid: 0d14560ce86f44e428f17a87fae1112b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d14560ce86f44e428f17a87fae1112b, type: 3}
 --- !u!4 &6767168467094114000 stripped
 Transform:
@@ -2284,7 +2293,7 @@ MonoBehaviour:
   autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 0.7, y: 5.4, z: -40}
+  endValueV3: {x: 0.7, y: 5.4, z: -60}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
