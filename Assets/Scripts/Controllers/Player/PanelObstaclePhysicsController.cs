@@ -29,7 +29,7 @@ namespace Controllers.Player
             {
                 
                 
-               
+                SoundSignals.Instance.failSound?.Invoke();
                 //CoreGameSignals.Instance.onStageAreaEntered?.Invoke();
                 InputSignals.Instance.onDisableInput?.Invoke();
                 Debug.Log("lose");
@@ -41,6 +41,7 @@ namespace Controllers.Player
 
             if (other.CompareTag("PanelLevelWin"))
             {
+                SoundSignals.Instance.winSound?.Invoke();
                 InputSignals.Instance.onDisableInput?.Invoke();
                 CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
                 DOTween.PauseAll();
@@ -49,6 +50,7 @@ namespace Controllers.Player
             }
             if (other.CompareTag("PanelLevelPass"))
             {
+                SoundSignals.Instance.passSound?.Invoke();
                 UISignals.Instance.onSetStageColor?.Invoke(manager.StageID);
                 manager.StageID++;
                 Debug.Log("pass");

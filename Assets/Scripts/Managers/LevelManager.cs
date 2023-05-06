@@ -70,7 +70,7 @@ namespace Managers
         private void Start()
         {
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);//levelsayılarını burdan al
-            //CoreGameSignals.Instance.onPlay?.Invoke();
+            SoundSignals.Instance.backgroundSound?.Invoke();
             
         }
 

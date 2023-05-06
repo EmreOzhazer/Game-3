@@ -44,7 +44,7 @@ namespace Managers
         public void NextLevel()
         {
             CoreGameSignals.Instance.onNextLevel?.Invoke();
-            
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
@@ -53,7 +53,7 @@ namespace Managers
         public void RestartLevel()
         {
             CoreGameSignals.Instance.onRestartLevel?.Invoke();
-            
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CoreUISignals.Instance.onClosePanel?.Invoke(2);
             UISignals.Instance.onCountdownStart?.Invoke();
@@ -62,6 +62,7 @@ namespace Managers
         
         public void LevelsShow()
         {
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.OnLevelsPanel?.Invoke();
            // CoreUISignals.Instance.onClosePanel?.Invoke(2);
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
@@ -70,6 +71,7 @@ namespace Managers
         
         public void Level1()
         {
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(0);
             
@@ -81,7 +83,7 @@ namespace Managers
         }
         public void Level2()
         {           
-
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(1);
             
@@ -94,7 +96,7 @@ namespace Managers
         }
         public void Level3()
         {           
-
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(2);
             
@@ -107,7 +109,7 @@ namespace Managers
         }
         public void Level4()
         {           
-
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(3);
             
@@ -121,6 +123,7 @@ namespace Managers
 
         public void Play()
         {
+            SoundSignals.Instance.clickSound?.Invoke();
             CoreGameSignals.Instance.onPlay?.Invoke();
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
             CameraSignals.Instance.onSetCameraTarget?.Invoke();
@@ -147,6 +150,7 @@ namespace Managers
         private void OnLevelSuccessful()
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Win, 2);
+            
         }
 
         private void OnLevelFailed()
