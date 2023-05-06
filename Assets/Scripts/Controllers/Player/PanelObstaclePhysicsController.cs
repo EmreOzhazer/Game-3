@@ -17,7 +17,7 @@ namespace Controllers.Player
        // [SerializeField] private new Collider collider;
        // [SerializeField] private new Rigidbody rigidbody;
 
-       
+       private bool isfailcalled = true;
 
         #endregion
 
@@ -34,7 +34,12 @@ namespace Controllers.Player
                 InputSignals.Instance.onDisableInput?.Invoke();
                 Debug.Log("lose");
                 DOTween.Pause("first");
-                CoreGameSignals.Instance.onLevelFailed?.Invoke();
+                if (isfailcalled == true)
+                {
+                    CoreGameSignals.Instance.onLevelFailed?.Invoke();
+                    isfailcalled = false;
+                }
+
                 DOTween.Pause("third");
 
             }

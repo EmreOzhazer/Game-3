@@ -1066,7 +1066,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7040562335599691222}
-  m_LocalRotation: {x: 0.70664966, y: -0.0006043218, z: -0.0005917297, w: 0.7075631}
+  m_LocalRotation: {x: 0.7067015, y: -0.000604365, z: -0.0005916855, w: 0.7075113}
   m_LocalPosition: {x: 0, y: -1.6, z: 124.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 0, y: -1.6, z: -60}
+  endValueV3: {x: 0, y: -1.6, z: -24.5}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -1874,8 +1874,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4055124746844620471, guid: 61e886f8fae01e249bfa6ec5f1b3b427,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055124746844620471, guid: 61e886f8fae01e249bfa6ec5f1b3b427,
+        type: 3}
       propertyPath: m_TagString
-      value: PanelLevelPass
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6887476428202570845, guid: 61e886f8fae01e249bfa6ec5f1b3b427,
         type: 3}
