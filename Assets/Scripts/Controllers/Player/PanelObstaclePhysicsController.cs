@@ -55,6 +55,11 @@ namespace Controllers.Player
                 manager.StageID++;
                 Debug.Log("pass");
             }
+            if (other.CompareTag("MoreLevelSoon"))
+            {
+                SoundSignals.Instance.winSound?.Invoke();
+                CoreGameSignals.Instance.onmoreSoon?.Invoke();
+            }
             
         }
         public void OnReset()

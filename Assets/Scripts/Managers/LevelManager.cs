@@ -94,6 +94,7 @@ namespace Managers
             levelID++;
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
             CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
+           
         }
 
         private void OnRestartLevel()

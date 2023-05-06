@@ -11,6 +11,7 @@ TagManager:
   - PanelLevelFail
   - PanelLevelWin
   - PanelLevelPass
+  - MoreLevelSoon
   layers:
   - Default
   - TransparentFX

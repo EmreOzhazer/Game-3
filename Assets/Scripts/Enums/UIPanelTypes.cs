@@ -6,6 +6,7 @@
         Win,
         Start,
         Level,
-        LevelsShow
+        LevelsShow,
+        MoreLevelsSoon
     }
 }

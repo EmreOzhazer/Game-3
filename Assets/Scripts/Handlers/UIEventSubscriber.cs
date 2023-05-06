@@ -66,6 +66,11 @@ namespace Handlers
                     button.onClick.AddListener(_manager.LevelsShow);
                     break;
                 }
+                case UIEventSubscriptionTypes.OnMoreLevelsSoonPanel:
+                {
+                    button.onClick.AddListener(_manager.LevelsSoon);
+                    break;
+                }
             }
             
             
@@ -101,6 +106,11 @@ namespace Handlers
                 case UIEventSubscriptionTypes.OnLevelsPanel:
                 {
                     button.onClick.RemoveListener(_manager.LevelsShow);
+                    break;
+                }
+                case UIEventSubscriptionTypes.OnMoreLevelsSoonPanel:
+                {
+                    button.onClick.RemoveListener(_manager.LevelsSoon);
                     break;
                 }
             }

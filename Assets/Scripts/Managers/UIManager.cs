@@ -25,6 +25,7 @@ namespace Managers
             CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
             CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
             CoreGameSignals.Instance.onReset += OnReset;
+            CoreGameSignals.Instance.onmoreSoon += OnMoreLevelsSoon;
         }
 
         private void UnSubscribeEvents()
@@ -34,6 +35,7 @@ namespace Managers
             CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
             CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
             CoreGameSignals.Instance.onReset -= OnReset;
+            CoreGameSignals.Instance.onmoreSoon -= OnMoreLevelsSoon;
         }
 
         private void OnDisable()
@@ -67,6 +69,11 @@ namespace Managers
            // CoreUISignals.Instance.onClosePanel?.Invoke(2);
             CoreUISignals.Instance.onClosePanel?.Invoke(1);
            
+        }
+
+        public void LevelsSoon()
+        {
+            CoreGameSignals.Instance.onmoreSoon?.Invoke();
         }
         
         public void Level1()
@@ -138,8 +145,6 @@ namespace Managers
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Start, 1);
             UISignals.Instance.onSetNewLevelValue?.Invoke(levelManager.levelID);
             
-            
-            
         }
         
         private void OnLevelsPanel()
@@ -156,6 +161,11 @@ namespace Managers
         private void OnLevelFailed()
         {
             CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.Fail, 2);
+            
+        }
+        private void OnMoreLevelsSoon()
+        {
+            CoreUISignals.Instance.onOpenPanel?.Invoke(UIPanelTypes.MoreLevelsSoon, 2);
             
         }
 

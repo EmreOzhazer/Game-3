@@ -1927,6 +1927,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: wall6
       objectReference: {fileID: 0}
+    - target: {fileID: 4644847071580036987, guid: 0d14560ce86f44e428f17a87fae1112b,
+        type: 3}
+      propertyPath: m_TagString
+      value: MoreLevelSoon
+      objectReference: {fileID: 0}
     - target: {fileID: 5421805506148353473, guid: 0d14560ce86f44e428f17a87fae1112b,
         type: 3}
       propertyPath: m_RootOrder
